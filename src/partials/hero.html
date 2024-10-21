@@ -1,0 +1,25 @@
+<div class="HeroBox">
+        <h1 class="HeroMainHeading"></h1>
+        <ul class="HeroStarsList"></ul>
+        <p class="HeroMovieDescription"></p>
+        <div class="HeroTrailerButtons">
+            <button class="HeroWatchTrailer">Watch trailer</button>
+            <button class="HeroMoreDetails">More Details</button>
+        </div>
+</div>
+
+<script type="module" src="./partials_js/hero.js"></script>
+
+<template>
+    <li class="HeroStarListItem">
+        <svg width="16" height="16" class="HeroStarSVG">
+            <defs>
+                <linearGradient id="Gradient1" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop class="Stop1" offset="0%" />
+                    <stop class="Stop2" offset="100%" />
+                </linearGradient>
+            </defs>
+            <use href="./images/icons.svg#icon-star" fill="url(#Gradient1)"></use>
+        </svg>
+    </li>
+</template>

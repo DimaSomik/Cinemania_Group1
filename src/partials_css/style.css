@@ -1,0 +1,12 @@
+/* Common styles */
+@import url('./reset.css');
+
+/* Sections styles */
+@import url('./header.css');
+@import url('./hero.css');
+@import url('./weekly_trends.css');
+@import url('./upcoming.css');
+@import url('./catalog.css');
+@import url('./footer.css');
+@import url('./modal_1.css');
+@import url('./modal_2.css');

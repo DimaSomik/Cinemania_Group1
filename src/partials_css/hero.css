@@ -1,0 +1,200 @@
+ .HeroBox {
+    /* background-image:  linear-gradient(86.47deg, #111111 33.63%, rgba(0, 0, 0, 0) 76.86%),
+                       url('../images/heroBackground.jpg'); */
+    width: 100vw;
+    height: 100vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 20px;
+    row-gap: 20px;
+}
+
+.HeroMainHeading {
+    font-family: "Roboto";
+    font-size: 32px;
+    font-weight: 500;
+    line-height: 37.5px;
+    text-align: left;
+    color: #FFFFFF;
+    margin: 0;
+    padding: 0;
+    max-width: 240px;
+    transition: 0.5s;
+}
+
+.HeroStarsList {
+    display: flex;
+    justify-content: center;
+    gap: 4px;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.HeroStarSVG {
+    transition: 0.5s;
+}
+
+.Stop1 {
+    stop-color: rgba(248, 65, 25, 1);
+}
+
+.Stop2 {
+    stop-color: rgba(248, 159, 25, 0.68);
+}
+
+.HeroMovieDescription {
+    font-family: "Roboto";
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 16.41px;
+    text-align: left;
+    color: #FFFFFF;
+    max-width: 180px;
+    margin: 0;
+    padding: 0;
+    transition: 0.5s;
+}
+
+.HeroTrailerButtons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin: 0;
+    padding: 0;
+}
+
+.HeroWatchTrailer {
+    font-family: Roboto;
+    width: 117px;
+    height: 38px;
+    border-radius: 74px;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 14.06px;
+    text-align: center;
+    border: none;
+    color: #000000;
+    background-image: linear-gradient(160deg, #FFC226 2%, #F84119 70%);
+    transition: 0.5s;
+    background-size: 200% auto;
+}
+
+.HeroWatchTrailer:hover {
+    background-position: right center;
+  }
+
+.HeroMoreDetails {
+    font-family: Roboto;
+    width: 117px;
+    height: 38px;
+    border-radius: 74px;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 14.06px;
+    text-align: center;
+    background-color: transparent;
+    border: 1px solid #ffffff;
+    color: #FFFFFF;
+    transition: 0.5s;
+}
+
+.HeroMoreDetails:hover {
+    border: 1px solid #FFC226;
+    color: #FFC226;
+}
+
+/* @media (min-resolution: 192dpi) {
+    .HeroBox {
+        background-image:  linear-gradient(86.47deg, #111111 33.63%, rgba(0, 0, 0, 0) 76.86%),
+                           url('../images/heroBackground@2x.jpg');
+    }
+} */
+
+@media (768px <= width < 1279px) {
+    .HeroBox {
+        /* background-image:  linear-gradient(86.47deg, #111111 40%, rgba(0, 0, 0, 0) 87%),
+                           url('../images/heroBackground.jpg'); */
+        padding: 40px;
+    }
+
+    .HeroMainHeading {    
+        font-size: 44px;
+        line-height: 51.56px;
+        max-width: 450px;
+    }
+
+    .HeroStarSVG {
+        width: 20px;
+        height: 20px;
+    }
+
+    .HeroMovieDescription {
+        font-size: 14px;
+        line-height: 16.41px;
+        max-width: 254px;
+        margin-bottom: 10px;
+    }
+
+    .HeroWatchTrailer {
+        width: 120px;
+        height: 40px;
+        font-size: 14px;
+        line-height: 20px;
+    }
+
+    .HeroMoreDetails {
+        width: 120px;
+        height: 40px;
+        font-size: 14px;
+        line-height: 20px;
+    }
+}
+
+@media (min-width: 1280px) {
+    .HeroBox {
+        /* background-image:  linear-gradient(86.47deg, #111111 40%, rgba(0, 0, 0, 0) 87%),
+                           url('../images/heroBackground.jpg'); */
+        row-gap: 30px;
+        padding: 150px;
+    }
+
+    .HeroMainHeading {    
+        font-size: 64px;
+        line-height: 75px;
+        max-width: 670px;
+    }
+
+    .HeroStarSVG {
+        width: 24px;
+        height: 24px;
+    }
+
+    .HeroMovieDescription {
+        font-size: 16px;
+        line-height: 18.75px;
+        max-width: 370px;
+        margin-bottom: 10px;
+    }
+
+    .HeroWatchTrailer {
+        width: 140px;
+        height: 50px;
+        font-size: 16px;
+        line-height: 24px;
+    }
+
+    .HeroMoreDetails {
+        width: 140px;
+        height: 50px;
+        font-size: 16px;
+        line-height: 24px;
+    }
+}

@@ -1,0 +1,38 @@
+<div class="catalog-container">
+  <form class="catalog-search-form">
+    <div class="catalog-container-search">
+      <input
+        type="text"
+        class="catalog-search-input"
+        placeholder="Search"
+        required
+      /><svg height="18" width="18" class="catalog-icon-x">
+        <use href="./images/icons-catalog.svg#icon-x-search"></use>
+      </svg>
+    </div>
+
+    <button class="catalog-search-btn" type="submit">
+      <svg height="20" width="20" class="catalog-icon-search">
+        <use href="./images/icons-catalog.svg#icon-search"></use>
+      </svg>
+    </button>
+  </form>
+  <div class="catalog-gallery"></div>
+  <div class="catalog-pagination-container">
+    <svg height="20" width="20" class="catalog-icon-arrow-left">
+      <use href="./images/icons-catalog.svg#icon-arrow-left"></use>
+    </svg>
+    <div class="catalog-pagination-pages">
+      <button class="catalog-number-btn">01</button>
+      <button class="catalog-number-btn">02</button>
+      <button class="catalog-number-btn">03</button>
+      <span class="catalog-pagination-dots">...</span>
+      <button class="catalog-number-btn">24</button>
+    </div>
+    <svg height="20" width="20" class="catalog-icon-arrow-right">
+      <use href="./images/icons-catalog.svg#icon-arrow-right"></use>
+    </svg>
+  </div>
+</div>
+
+<script type="module" src="./partials_js/catalog.js"></script>

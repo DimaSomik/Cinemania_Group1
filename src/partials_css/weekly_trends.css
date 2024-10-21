@@ -1,0 +1,246 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.body-style {
+  background-color: rgba(17, 17, 17, 1);
+}
+body.light-theme .body-style {
+  background-color: #ffffff;
+}
+.text-style {
+  font-family: Roboto;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 18.75px;
+  text-align: left;
+  color: rgba(255, 255, 255, 1);
+}
+
+body.light-theme .text-style {
+  color: #111111;
+}
+
+.paragraph-style {
+  font-family: Roboto;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 18.75px;
+  text-align: right;
+  color: rgba(248, 119, 25, 1);
+  cursor: pointer;
+  border: none;
+  background-color: black;
+}
+
+body.light-theme .paragraph-style {
+  background-color: #ffffff;
+}
+
+#movies-list {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 24px;
+  margin-top: 24px;
+  margin-left: 20px;
+  margin-right: 20px;
+  justify-content: space-between;
+}
+.movie-card {
+  width: 280px;
+  height: 406px;
+  border-radius: 5px 5px 5px 5px;
+  flex-basis: calc(33.333% - 24px);
+  margin-bottom: 16px;
+  position: relative;
+}
+.movie-card::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0) 63.48%,
+    rgba(0, 0, 0, 0.9) 92.16%
+  );
+  z-index: 1;
+}
+.movie-card img {
+  width: 280px;
+  height: 406px;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0) 63.48%,
+    rgba(0, 0, 0, 0.9) 92.16%
+  );
+}
+.movie-title {
+  font-family: Roboto;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 20px;
+  text-align: left;
+  color: rgba(255, 255, 255, 1);
+  text-transform: uppercase;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+  font-weight: bold;
+}
+
+body.light-theme .movie-title {
+  color: black;
+}
+
+.movie-info {
+  display: flex;
+  flex-direction: column;
+  font-family: Roboto;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 20px;
+  text-align: left;
+  color: rgba(255, 255, 255, 1);
+  position: absolute;
+  top: 90%;
+  left: 0%;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+  z-index: 2;
+}
+.movie-info p {
+  color: rgba(183, 183, 183, 1);
+}
+
+body.light-theme .movie-info {
+  color: #111111;
+}
+
+.stars {
+  margin: 12px 0;
+  width: 14px;
+  height: 14px;
+  padding: 0.87px 0.44px 0.87px 0.44px;
+  color: rgba(248, 119, 25, 1);
+  position: absolute;
+  bottom: 0;
+  left: 220px;
+  display: flex;
+  flex-direction: row;
+}
+
+.movie-container {
+  flex-wrap: wrap;
+  width: 280px;
+  height: 406px;
+  margin-right: 20px;
+  margin-left: 20px;
+  justify-content: space-between;
+  gap: 16px;
+  display: block;
+  overflow-y: overlay;
+}
+
+@media (min-width: 768px) {
+  #movies-list {
+    margin-left: 32px;
+    margin-right: 32px;
+  }
+}
+@media (min-width: 768px) {
+  .text-style {
+    font-size: 24px;
+    line-height: 28.13px;
+  }
+}
+@media (min-width: 768px) {
+  .paragraph-style {
+    font-size: 24px;
+    line-height: 28.13px;
+  }
+}
+@media (min-width: 768px) {
+  .movie-card {
+    width: 224px;
+    height: 325px;
+  }
+}
+
+@media (min-width: 768px) {
+  .movie-card img {
+    width: 224px;
+    height: 325px;
+  }
+}
+@media (min-width: 768px) {
+  .movie-container {
+    display: grid;
+    opacity: 0px;
+    grid-template-columns: repeat(3, 1fr);
+    width: 704px;
+    height: 325px;
+    margin-right: 32px;
+    margin-left: 32px;
+  }
+}
+@media (min-width: 768px) {
+  .movie-info {
+    top: 86%;
+    left: 0%;
+  }
+}
+@media (min-width: 768px) {
+  .stars {
+    left: 170px;
+  }
+}
+@media (min-width: 1280px) {
+  .stars {
+    left: 330px;
+  }
+}
+@media (min-width: 1280px) {
+  .movie-info {
+    top: 92%;
+    left: 0%;
+  }
+}
+
+@media (min-width: 1280px) {
+  .text-style {
+    font-size: 28px;
+    line-height: 32.81px;
+  }
+}
+@media (min-width: 1280px) {
+  .paragraph-style {
+    font-size: 28px;
+    line-height: 32.81px;
+  }
+}
+@media (min-width: 1280px) {
+  .movie-card {
+    width: 395px;
+    height: 574px;
+    gap: 15px;
+  }
+}
+@media (min-width: 1280px) {
+  .movie-card img {
+    width: 395px;
+    height: 574px;
+  }
+}
+@media (min-width: 1280px) {
+  .movie-container {
+    margin-right: 32px;
+    margin-left: 32px;
+    gap: 15px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    width: 1215px;
+    height: 574px;
+  }
+}
