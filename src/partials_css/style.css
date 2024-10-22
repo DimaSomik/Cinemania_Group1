@@ -4,6 +4,7 @@
 /* Sections styles */
 @import url('./header.css');
 @import url('./hero.css');
+@import url('./hero_started.css');
 @import url('./weekly_trends.css');
 @import url('./upcoming.css');
 @import url('./catalog.css');

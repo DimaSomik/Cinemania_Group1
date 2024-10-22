@@ -29,8 +29,6 @@ function createStars(num, list) {
 }
 
 function loadHeroContent(movie) {
-    console.log(movie);
-
     document.querySelector('.HeroMainHeading').textContent = movie.title;
     const trimmedOverview = truncate(movie.overview, 20);
     document.querySelector('.HeroMovieDescription').textContent = trimmedOverview + "...";

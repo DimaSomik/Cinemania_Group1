@@ -12,7 +12,7 @@ ul {
 }
 
 .upcoming-container {
-  margin-left: 20px;
+  margin-left: 10px;
 }
 
 .upcoming-title {
@@ -40,7 +40,7 @@ body.light-theme .upcoming-title {
 
 .upcoming-img {
   width: 280px;
-  height: 402px;
+  height: 300px;
   top: 992px;
   left: 20px;
   gap: 0px;
@@ -154,7 +154,7 @@ body.light-theme .upcoming-slash {
   font-weight: 500;
   line-height: 18.75px;
   color: #ffffff;
-  flex-basis: 82px;
+  /* flex-basis: 82px; */
   justify-content: flex-start;
 }
 
@@ -213,12 +213,18 @@ body.light-theme .upcoming-title-about {
 }
 
 @media screen and (min-width: 768px) {
+  .upcoming-content {
+    width: 90vw;
+    margin: 0 auto;
+  }
+
   .upcoming-title {
     width: 300px;
     font-size: 24px;
     line-height: 28.13px;
     margin-top: 20px;
-    margin-bottom: 44px;
+    margin-bottom: 20px;
+    margin-left: 10px;
   }
 
   .upcoming-img {
@@ -228,7 +234,8 @@ body.light-theme .upcoming-title-about {
   }
 
   .upcoming-box {
-    max-width: 640px;
+    max-width: 700px;
+    margin-left: 0px;
   }
 
   .upcoming-box-title {
@@ -246,12 +253,12 @@ body.light-theme .upcoming-title-about {
   }
 
   .upcoming-info-list-left {
-    flex-basis: 48%;
+    flex-basis: 40%;
     margin-top: 0;
   }
 
   .upcoming-info-list-right {
-    flex-basis: 48%;
+    flex-basis: 40%;
     margin-top: 0;
   }
 
@@ -274,10 +281,11 @@ body.light-theme .upcoming-title-about {
 
 @media screen and (min-width: 1024px) {
   .upcoming-container {
-    margin-left: 32px;
+    margin-left: 0;
   }
 
   .upcoming-title {
+    margin-left: 30px;
     width: 340px;
     font-size: 28px;
     line-height: 32.81px;
@@ -285,6 +293,7 @@ body.light-theme .upcoming-title-about {
   }
 
   .upcoming-content {
+    margin: 0 auto;
     max-width: 1211px;
     display: flex;
     justify-content: flex-start;
@@ -304,7 +313,7 @@ body.light-theme .upcoming-title-about {
     top: 992px;
     display: block;
     margin-left: 0px;
-    object-fit: contain;
+    object-fit: fill;
   }
 
   .upcoming-box {
@@ -338,7 +347,7 @@ body.light-theme .upcoming-title-about {
   .upcoming-info-list-item {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: baseline;
     margin-bottom: 0px;
   }
 
