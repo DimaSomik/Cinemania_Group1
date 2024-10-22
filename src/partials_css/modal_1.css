@@ -1,5 +1,6 @@
 .MovieCard {
-  display: flex;
+  /* display: flex; */
+  display: none;
   gap: 20px;
   padding: 20px;
   background-color: #fff;

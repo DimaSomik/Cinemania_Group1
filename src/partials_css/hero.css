@@ -7,7 +7,8 @@
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center;
-    display: flex;
+    /* display: flex; */
+    display: none;
     justify-content: center;
     align-items: flex-start;
     flex-direction: column;
@@ -39,6 +40,7 @@
 
 .HeroStarSVG {
     transition: 0.5s;
+    fill: rgba(248, 159, 25, 0.68);
 }
 
 .Stop1 {

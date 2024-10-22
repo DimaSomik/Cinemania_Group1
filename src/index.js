@@ -8,3 +8,4 @@ import './partials_js/modal_2';
 import './partials_js/theme-switcher';
 import './partials_js/upcoming';
 import './partials_js/weekly_trends';
+import './partials_js/library';

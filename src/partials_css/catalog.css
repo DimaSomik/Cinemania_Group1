@@ -1,9 +1,7 @@
-body {
-  background-color: #111;
-}
 .catalog-container {
   width: 320px;
   margin: 0 auto;
+  display: none;
 }
 
 /* SEARCH */

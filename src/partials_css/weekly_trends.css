@@ -70,6 +70,7 @@ body.light-theme .paragraph-style {
   );
   z-index: 1;
 }
+
 .movie-card img {
   width: 280px;
   height: 406px;
@@ -89,10 +90,6 @@ body.light-theme .paragraph-style {
   text-transform: uppercase;
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
   font-weight: bold;
-}
-
-body.light-theme .movie-title {
-  color: black;
 }
 
 .movie-info {

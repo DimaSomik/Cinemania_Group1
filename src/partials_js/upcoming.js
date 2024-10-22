@@ -20,7 +20,6 @@ function displayMovie(movie) {
   
   document.getElementById('movieOverview').textContent = movie.overview;
   
-  console.log(movie);
   const backdropPath = movie.backdrop_path ? `${IMG_BASE_URL}${movie.backdrop_path}` : '../images/placeholder.jpg';
   document.getElementById('movieImg').src = backdropPath;
 }
