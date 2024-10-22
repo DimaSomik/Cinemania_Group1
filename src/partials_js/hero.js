@@ -13,18 +13,20 @@ function setNumberOfStarts(vote) {
 };
 
 function createStars(num, list) {
+    const starItem = `<li class="HeroStarListItem">
+                        <svg width="16" height="16" class="HeroStarSVG">
+                            <defs>
+                                <linearGradient id="Gradient1" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop class="Stop1" offset="0%" />
+                                    <stop class="Stop2" offset="100%" />
+                                </linearGradient>
+                            </defs>
+                            <use href="/icons.adfc4680.svg#icon-star" fill="url(#Gradient1)"></use>
+                        </svg>
+                      </li>`;
+
     for (let i = 0; i < num; i++) {
-        list.insertAdjacentHTML("afterbegin", `<li class="HeroStarListItem">
-                                                <svg width="16" height="16" class="HeroStarSVG">
-                                                    <defs>
-                                                        <linearGradient id="Gradient1" x1="0%" y1="0%" x2="100%" y2="100%">
-                                                            <stop class="Stop1" offset="0%" />
-                                                            <stop class="Stop2" offset="100%" />
-                                                        </linearGradient>
-                                                    </defs>
-                                                    <use href="./images/icons.svg#icon-star" fill="url(#Gradient1)"></use>
-                                                </svg>
-                                              </li>`);
+       list.insertAdjacentHTML("afterbegin", starItem);
     }
 }
 
@@ -41,6 +43,5 @@ function loadHeroContent(movie) {
 (async () => {
     const fetchPopularMovie = await getPopularMoviesToday(1);
     const randomMovie = getRandomMovie(fetchPopularMovie.results);
-    // document.querySelector('.HeroWatchTrailer').addEventListener('click', openDetailsModal(randomMovie.id));
     loadHeroContent(randomMovie);
 })();
