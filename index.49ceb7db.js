@@ -1,2 +1,0 @@
-const e=document.querySelector(".header-theme-switcher");function t(){"light"===localStorage.getItem("theme-mode")&&(e.setAttribute("checked",!0),document.body.classList.add("light-theme"))}e.addEventListener("change",(function(){"light"===localStorage.getItem("theme-mode")?localStorage.removeItem("theme-mode"):localStorage.setItem("theme-mode","light");document.body.classList.toggle("light-theme"),t()})),t();
-//# sourceMappingURL=index.49ceb7db.js.map

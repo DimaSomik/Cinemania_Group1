@@ -1,2 +1,0 @@
-!function(){var e="theme-mode",t=document.querySelector(".header-theme-switcher");function o(){"light"===localStorage.getItem(e)&&(t.setAttribute("checked",!0),document.body.classList.add("light-theme"))}t.addEventListener("change",(function(){"light"===localStorage.getItem(e)?localStorage.removeItem(e):localStorage.setItem(e,"light");document.body.classList.toggle("light-theme"),o()})),o()}();
-//# sourceMappingURL=index.28142fe3.js.map
