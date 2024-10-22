@@ -2,7 +2,8 @@ import { getUpcomingMovies } from "./api";
 import { getGenres } from "./api";
 import { getGenreNames } from "./weekly_trends";
 
-const IMG_BASE_URL = 'https://image.tmdb.org/t/p/w500';
+// const IMG_BASE_URL = 'https://image.tmdb.org/t/p/w500';
+const IMG_BASE_URL = 'https://image.tmdb.org/t/p/original';
 let genres = [];
 
 function displayMovie(movie) {
@@ -19,8 +20,9 @@ function displayMovie(movie) {
   
   document.getElementById('movieOverview').textContent = movie.overview;
   
-  const posterPath = movie.poster_path ? `${IMG_BASE_URL}${movie.poster_path}` : '../images/placeholder.jpg';
-  document.getElementById('movieImg').src = posterPath;
+  console.log(movie);
+  const backdropPath = movie.backdrop_path ? `${IMG_BASE_URL}${movie.backdrop_path}` : '../images/placeholder.jpg';
+  document.getElementById('movieImg').src = backdropPath;
 }
 
 export function getRandomMovie(movies) {
