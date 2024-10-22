@@ -94,6 +94,11 @@ body.light-theme .header-span {
   gap: 40px;
 }
 
+.header-link a:hover {
+  color: var(--main-orange);
+  transition: color var(--transition-curve) var(--transition-duration);
+}
+
 .header-switcher {
   z-index: 2;
   position: relative;

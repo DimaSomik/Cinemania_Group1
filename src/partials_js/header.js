@@ -27,6 +27,10 @@ const displayUnset = (elem) => {document.querySelector(`${elem}`).style.display 
 const homePage = document.querySelector('.header-link-index');
 homePage.addEventListener("click", (event) => {
   event.preventDefault();
+  homePage.style.color = "#f87719";
+  catalogPage.style.color = "#595959";
+  libraryPage.style.color = "#595959";
+
   displayNone(".HeroBox");
   displayFlex(".StartedHeroBox");
   displayNone(".LibraryHeroBox");
@@ -38,6 +42,10 @@ homePage.addEventListener("click", (event) => {
 
 const catalogPage = document.querySelector('.header-link-catalog');
 catalogPage.addEventListener("click", (event) => {
+  homePage.style.color = "#595959";
+  catalogPage.style.color = "#f87719";
+  libraryPage.style.color = "#595959";
+
   event.preventDefault();
   displayFlex(".HeroBox");
   displayUnset(".catalog-container");
@@ -50,6 +58,10 @@ catalogPage.addEventListener("click", (event) => {
 
 const libraryPage = document.querySelector('.header-link-library');
 libraryPage.addEventListener("click", (event) => {
+  homePage.style.color = "#595959";
+  catalogPage.style.color = "#595959";
+  libraryPage.style.color = "#f87719";
+
   event.preventDefault();
   displayFlex(".LibraryHeroBox");
   displayNone(".HeroBox");
