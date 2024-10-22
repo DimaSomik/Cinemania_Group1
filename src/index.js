@@ -9,3 +9,4 @@ import './partials_js/theme-switcher';
 import './partials_js/upcoming';
 import './partials_js/weekly_trends';
 import './partials_js/library';
+import './partials_js/hero_started';
