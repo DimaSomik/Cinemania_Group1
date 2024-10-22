@@ -20,6 +20,46 @@ function closeMenuOnClickOutside(event) {
   }
 }
 
+const displayNone = (elem) => {document.querySelector(`${elem}`).style.display = "none"};
+const displayFlex = (elem) => {document.querySelector(`${elem}`).style.display = "flex"};
+const displayUnset = (elem) => {document.querySelector(`${elem}`).style.display = "unset"};
+
+const homePage = document.querySelector('.header-link-index');
+homePage.addEventListener("click", (event) => {
+  event.preventDefault();
+  displayNone(".HeroBox");
+  displayFlex(".StartedHeroBox");
+  displayNone(".LibraryHeroBox");
+  displayNone(".catalog-container");
+  displayFlex("#movies-list");
+  document.querySelector('.movie-container').style.display = "grid";
+  displayUnset(".upcoming");
+});
+
+const catalogPage = document.querySelector('.header-link-catalog');
+catalogPage.addEventListener("click", (event) => {
+  event.preventDefault();
+  displayFlex(".HeroBox");
+  displayUnset(".catalog-container");
+  displayNone(".StartedHeroBox");
+  displayNone(".LibraryHeroBox");
+  displayNone("#movies-list");
+  displayNone(".movie-container");
+  displayNone(".upcoming");
+});
+
+const libraryPage = document.querySelector('.header-link-library');
+libraryPage.addEventListener("click", (event) => {
+  event.preventDefault();
+  displayFlex(".LibraryHeroBox");
+  displayNone(".HeroBox");
+  displayNone(".StartedHeroBox");
+  displayNone(".catalog-container");
+  displayNone("#movies-list");
+  displayNone(".movie-container");
+  displayNone(".upcoming");
+});
+
 headerMenuBtn.addEventListener('click', toggleMenu);
 const menuLinks = document.querySelectorAll('.header-list a');
 
