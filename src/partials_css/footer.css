@@ -205,6 +205,7 @@ body.light-theme .modal-team-paragraph {
   .container {
     max-width: 768px;
     padding: 0 32px;
+    margin: 0 auto;
   }
 }
 @media screen and (min-width: 1280px) {

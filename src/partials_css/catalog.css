@@ -5,6 +5,10 @@
 
 /* display: none; */
 
+.catalog-container {
+  display: none;
+}
+
 /* SEARCH */
 .CatalogSearchForm {
   display: flex;
