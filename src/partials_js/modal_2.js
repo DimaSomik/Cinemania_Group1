@@ -8,9 +8,9 @@ function openModal() {
 }
 
 // Close the modal when the user clicks the close button
-CLOSE_BTN.onclick = function () {
-  MODAL.style.display = "none";
-};
+// CLOSE_BTN.onclick = function () {
+//   MODAL.style.display = "none";
+// };
 
 // Close the modal when the user clicks outside of it
 window.onclick = function (event) {
