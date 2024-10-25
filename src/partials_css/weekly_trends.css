@@ -55,6 +55,7 @@ body.light-theme .paragraph-style {
   flex-basis: calc(33.333% - 24px);
   margin-bottom: 16px;
   position: relative;
+  cursor: pointer;
 }
 .movie-card::after {
   content: '';
@@ -138,7 +139,7 @@ body.light-theme .movie-info {
   justify-content: space-between;
   gap: 16px;
   display: block;
-  overflow-y: overlay;
+  flex: 1 1 30%;
 }
 
 @media (min-width: 768px) {
