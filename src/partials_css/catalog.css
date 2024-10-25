@@ -1,3 +1,14 @@
+/* .catalog-container {
+  width: 320px;
+  margin: 0 auto;
+} */
+
+/* display: none; */
+
+.catalog-container {
+  display: none;
+}
+
 /* SEARCH */
 .CatalogYearSelect {
   border-radius: 8px;

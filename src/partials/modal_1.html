@@ -1,30 +1,13 @@
-<div class="MovieCard">
-    <img src="https://image.tmdb.org/t/p/original/${film.backdropPath}" alt="${film.title}" class="MoviePoster">
-    <div class="MovieDetails">
-        <h2 class="ModalMovieTitle">${film.title}</h2>
-        <p><strong>Vote / Votes:</strong> <span class="MovieRating">${film.voteAverage}</span> / ${film.voteCount}</p>
-        <p><strong>Popularity:</strong> ${film.popularity}</p>
-        <p><strong>Genre:</strong> ${film.genres.map(genre => genre.name).join(' ')}</p>
-        <h3>ABOUT</h3>
-        <p>${film.overview}</p>
-        <button class="LibraryBtn">Add to my library</button>
-    </div>
-</div>
-
-<!-- Modal for More Details -->
-<div id="detailsModal" class="Modal">
-    <div class="ModalContent">
-        <span class="CloseBtn" onclick="closeDetailsModal()">&times;</span>
-        <img src="https://image.tmdb.org/t/p/original/${film.backdropPath}" alt="${film.title}" class="ModalPoster">
-        <div class="ModalMovieDetails">
-            <h2 class="ModalMovieTitle">${film.title}</h2>
-            <p><strong>Vote / Votes:</strong> <span class="ModalMovieRating">${film.voteAverage}</span> /
-                ${film.voteCount}</p>
-            <p><strong>Popularity:</strong> ${film.popularity}</p>
-            <p><strong>Genre:</strong> ${film.genres.map(genre => genre.name).join(' ')}</p>
-            <h3>ABOUT</h3>
-            <p>${film.overview}</p>
-            <button class="LibraryBtn">Add to my library</button>
-        </div>
+<div id="modal" class="modal hidden">
+    <div class="modal-content">
+        <button id="closeModalBtn" class="close-modal">&times;</button>
+        <img id="moviePoster" src="" alt="Movie Poster" class="modal-poster" />
+        <h2 id="movieTitle">Title</h2>
+        <p id="movieRating">Rating: </p>
+        <p id="moviePopularity">Popularity: </p>
+        <p id="movieDescription" class="modal-description">Description</p>
+        <button id="toggleLibraryBtn" class="modal-library-btn">Add to My Library</button>
+        <button id="watchTrailerBtn" class="modal-trailer-btn">Watch Trailer</button>
+        <div id="trailerContainer" class="trailer-container hidden"></div>
     </div>
 </div>
