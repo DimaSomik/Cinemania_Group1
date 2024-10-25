@@ -168,13 +168,12 @@ function initializePagination() {
 
 async function handleSearch() {
   const query = document.querySelector('.CatalogSearchInput').value.trim();
+  const selectedYear = document.querySelector('.CatalogYearSelect').value;
   const paginationContainer = document.querySelector(
     '.CatalogPaginationContainer'
   );
 
-  if (!query) return;
-
-  const { results } = await searchMovies(query, 1);
+  const { results } = await searchMovies(query, selectedYear, '', 1);
 
   if (results.length > 0) {
     createMoviesCatalog(results);
