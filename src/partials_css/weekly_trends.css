@@ -139,7 +139,7 @@ body.light-theme .movie-info {
   justify-content: space-between;
   gap: 16px;
   display: block;
-  flex: 1 1 30%;
+  overflow-x: scroll;
 }
 
 @media (min-width: 768px) {
