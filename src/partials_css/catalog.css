@@ -6,11 +6,30 @@
 /* display: none; */
 
 /* SEARCH */
+.CatalogYearSelect {
+  border-radius: 8px;
+  border: 1px solid #fff;
+  height: 40px;
+  width: 95px;
+  background-color: #111;
+  color: #b7b7b7;
+  padding-left: 16px;
+  font-family: Roboto;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: normal;
+  cursor: pointer;
+}
 .CatalogSearchForm {
+  width: 320px;
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
+  align-items: center;
   gap: 16px;
   margin-top: 80px;
+  margin-left: auto;
+  margin-right: auto;
 }
 .CatalogSearchInput {
   height: 40px;
@@ -203,6 +222,12 @@
     width: 768px;
     margin: 0 auto;
   } */
+  .CatalogYearSelect {
+    height: 44px;
+  }
+  .CatalogSearchForm {
+    width: 768px;
+  }
   .CatalogSearchInput {
     width: 204px;
     height: 44px;
@@ -279,9 +304,21 @@
     width: 1158px;
     margin: 0 auto;
   } */
+  .CatalogSearchForm {
+    width: 1280px;
+  }
+  .CatalogYearSelect {
+    height: 48px;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.5;
+  }
   .CatalogSearchInput {
     width: 334px;
     height: 48px;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.5;
   }
   .CatalogIconX {
     right: 24px;
