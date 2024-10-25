@@ -12,7 +12,7 @@ const trailerContainer = document.getElementById('trailerContainer');
 let currentMovie = null;
 
 // Funkcja do wyświetlania modala
-function showModal(movie) {
+export function showModal(movie) {
   currentMovie = movie;
   moviePoster.src = `https://image.tmdb.org/t/p/original/${movie.poster_path}`;
   movieTitle.innerText = movie.title;
