@@ -12,12 +12,15 @@
 }
 
 .modal-content {
-  width: 700px;
+  width: 846px;
+  height: 598px;
   background: #fff;
   border-radius: 20px;
   padding: 20px;
-  text-align: center;
+  display: flex;
+  gap: 20px;
   position: relative;
+  box-sizing: border-box;
 }
 
 .close-modal {
@@ -31,28 +34,117 @@
 }
 
 .modal-poster {
-  width: 363px;
-  height: 318px;
+  width: 375px;
+  height: 478px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.modal-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  max-width: calc(100% - 395px);
+  /* Adjusts for image width and padding */
+}
+
+.modal-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin: 0 0 10px;
+}
+
+.modal-meta {
+  font-size: 14px;
+  margin-bottom: 20px;
+  text-align: left;
 }
 
 .modal-description {
   max-height: 150px;
   overflow-y: auto;
+  text-align: left;
+  font-size: 14px;
 }
 
-.modal-library-btn,
-.modal-trailer-btn {
-  margin: 10px;
-  padding: 10px;
+.modal-library-btn {
+  margin-top: 20px;
+  padding: 10px 20px;
+  border: 1px solid #f00;
+  color: #f00;
+  background: #fff;
   cursor: pointer;
+  border-radius: 5px;
+  font-size: 16px;
 }
 
-.hidden {
-  display: none;
+/* Tablet view */
+@media (max-width: 768px) {
+  .modal-content {
+    width: 90%;
+    height: auto;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+  }
+
+  .modal-poster {
+    width: 100%;
+    max-width: 375px;
+    height: auto;
+  }
+
+  .modal-info {
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .modal-title {
+    font-size: 22px;
+  }
+
+  .modal-meta {
+    font-size: 13px;
+  }
+
+  .modal-library-btn {
+    width: 100%;
+    padding: 10px;
+  }
 }
 
-.trailer-container {
-  width: 100%;
-  height: 315px;
-  margin-top: 10px;
+/* Phone view */
+@media (max-width: 480px) {
+  .modal-content {
+    width: 95%;
+    height: auto;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+  }
+
+  .modal-poster {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+  }
+
+  .modal-info {
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .modal-title {
+    font-size: 20px;
+  }
+
+  .modal-meta {
+    font-size: 12px;
+  }
+
+  .modal-library-btn {
+    width: 100%;
+    padding: 8px;
+    font-size: 14px;
+  }
 }
