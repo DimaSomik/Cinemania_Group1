@@ -49,15 +49,15 @@ function renderUserMovies(limit = getUserMoviesPerLoad()) {
         const genreNames = fetchGenreNames(movie.genre_ids);
 
         const movieCard = document.createElement('div');
-        movieCard.classList.add('movie-card');
+        movieCard.classList.add('my-movie-card');
         movieCard.innerHTML = `
           <img src="https://image.tmdb.org/t/p/w500${movie.poster_path}" alt="${
           movie.title
         }">
-          <div class="movie-info">
-            <h2 class="movie-title">${movie.title}</h2> 
+          <div class="my-movie-info">
+            <h2 class="my-movie-title">${movie.title}</h2> 
             <p>${genreNames} | ${movie.release_date.split('-')[0]}</p>
-            <div class="stars">${generateStars(movie.vote_average)}</div>
+            <div class="my-stars">${generateStars(movie.vote_average)}</div>
           </div>
         `;
         userMoviesContainer.appendChild(movieCard);

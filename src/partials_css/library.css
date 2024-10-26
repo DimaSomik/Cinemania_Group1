@@ -1,0 +1,252 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.body-style {
+  background-color: rgba(17, 17, 17, 1);
+}
+body.light-theme .body-style {
+  background-color: #ffffff;
+}
+.text-style {
+  font-family: Roboto;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 18.75px;
+  text-align: left;
+  color: rgba(255, 255, 255, 1);
+}
+
+body.light-theme .text-style {
+  color: #111111;
+}
+
+.paragraph-style {
+  font-family: Roboto;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 18.75px;
+  text-align: right;
+  color: rgba(248, 119, 25, 1);
+  cursor: pointer;
+  border: none;
+  background-color: inherit;
+}
+
+body.light-theme .paragraph-style {
+  background-color: #ffffff;
+}
+
+#user-library {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 24px;
+  margin-top: 24px;
+  margin-left: 20px;
+  margin-right: 20px;
+  justify-content: space-between;
+}
+.my-movie-card {
+  width: 280px;
+  height: 406px;
+  border-radius: 5px 5px 5px 5px;
+  flex-basis: calc(33.333% - 24px);
+  margin-bottom: 16px;
+  position: relative;
+  cursor: pointer;
+}
+.my-movie-card::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0) 63.48%,
+    rgba(0, 0, 0, 0.9) 85.16%
+  );
+  z-index: 1;
+}
+
+.my-movie-card img {
+  width: 280px;
+  height: 406px;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0) 63.48%,
+    rgba(0, 0, 0, 0.9) 92.16%
+  );
+}
+.my-movie-title {
+  font-family: Roboto;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 20px;
+  text-align: left;
+  color: rgba(255, 255, 255, 1);
+  text-transform: uppercase;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+  font-weight: bold;
+}
+
+.my-movie-info {
+  display: flex;
+  flex-direction: column;
+  font-family: Roboto;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 20px;
+  text-align: left;
+  color: rgba(255, 255, 255, 1);
+  position: absolute;
+  top: 88%;
+  left: 5%;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+  z-index: 2;
+}
+.my-movie-info p {
+  color: rgba(183, 183, 183, 1);
+  font-size: 12px;
+}
+
+body.light-theme .my-movie-info {
+  color: #111111;
+}
+
+.my-stars {
+  /* margin: 12px 0;
+  width: 14px;
+  height: 14px; */
+  padding: 0.87px 0.44px 0.87px 0.44px;
+  color: rgba(248, 119, 25, 1);
+  position: absolute;
+  bottom: 0px;
+  left: 190px;
+  display: flex;
+  flex-direction: row;
+}
+
+.my-movie-container {
+  flex-wrap: wrap;
+  width: 280px;
+  height: 406px;
+  margin-right: 20px;
+  margin-left: 20px;
+  justify-content: space-between;
+  gap: 16px;
+  display: block;
+  overflow-x: scroll;
+}
+
+@media (min-width: 768px) {
+  #user-library {
+    margin-left: 32px;
+    margin-right: 32px;
+  }
+
+  .my-movie-title {
+    font-size: 12px;
+  }
+
+  .my-movie-info p {
+    font-size: 9px;
+  }
+
+  .text-style {
+    font-size: 24px;
+    line-height: 28.13px;
+  }
+
+  .paragraph-style {
+    font-size: 24px;
+    line-height: 28.13px;
+  }
+
+  .my-movie-card {
+    width: 224px;
+    height: 325px;
+  }
+
+  .my-movie-card img {
+    width: 224px;
+    height: 325px;
+  }
+
+  .my-movie-container {
+    display: grid;
+    opacity: 0px;
+    grid-template-columns: repeat(3, 1fr);
+    width: 704px;
+    height: 325px;
+    /* margin-right: 32px;
+    margin-left: 32px; */
+    margin: 0 auto;
+  }
+
+  .my-movie-info {
+    top: 86%;
+    left: 5%;
+    font-size: 10px;
+  }
+
+  .my-stars {
+    left: 155px;
+    bottom: 0px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .my-stars {
+    left: 280px;
+  }
+
+  .my-movie-title {
+    font-size: 16px;
+  }
+
+  .my-movie-info p {
+    font-size: 15px;
+  }
+
+  .my-movie-info {
+    top: 90%;
+    left: 5%;
+    font-size: 16px;
+  }
+
+  .text-style {
+    font-size: 28px;
+    line-height: 32.81px;
+  }
+
+  .paragraph-style {
+    font-size: 28px;
+    line-height: 32.81px;
+  }
+
+  .my-movie-card {
+    width: 395px;
+    height: 574px;
+    gap: 15px;
+  }
+
+  .my-movie-card img {
+    width: 395px;
+    height: 574px;
+  }
+
+  .my-movie-container {
+    margin: 0 auto;
+    /* margin-right: 32px;
+    margin-left: 32px; */
+    gap: 15px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    width: 1215px;
+    height: 574px;
+  }
+}

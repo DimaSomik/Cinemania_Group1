@@ -38,7 +38,8 @@ homePage.addEventListener("click", (event) => {
   displayFlex("#movies-list");
   document.querySelector('.movie-container').style.display = "grid";
   displayUnset(".upcoming");
-  displayNone(".someBox");
+  displayNone("#user-library");
+  displayNone(".my-movie-container");
 });
 
 const catalogPage = document.querySelector('.header-link-catalog');
@@ -55,7 +56,8 @@ catalogPage.addEventListener("click", (event) => {
   displayNone("#movies-list");
   displayNone(".movie-container");
   displayNone(".upcoming");
-  displayNone(".someBox");
+  displayNone("#user-library");
+  displayNone(".my-movie-container");
 });
 
 const libraryPage = document.querySelector('.header-link-library');
@@ -66,7 +68,8 @@ libraryPage.addEventListener("click", (event) => {
 
   event.preventDefault();
   displayFlex(".LibraryHeroBox");
-  displayFlex(".someBox");
+  displayFlex("#user-library");
+  displayFlex(".my-movie-container");
   displayNone(".HeroBox");
   displayNone(".StartedHeroBox");
   displayNone(".catalog-container");
