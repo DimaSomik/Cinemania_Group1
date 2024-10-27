@@ -78,6 +78,10 @@
   font-size: 16px;
 }
 
+.hidden {
+  display: none;
+}
+
 /* Tablet view */
 @media (max-width: 768px) {
   .modal-content {
