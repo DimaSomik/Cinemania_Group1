@@ -1,8 +1,25 @@
 <div id="user-library">
   <h3 class="text-style">My Library</h3>
-  <button class="paragraph-style" id="show-more" onclick="showMoreMovies()">
-    See all
-  </button>
+</div>
+<div class="library-container">
+  <label for="genre-filter">Choose genre:</label>
+  <select
+    id="genre-filter"
+    class="library-genres-select"
+    onchange="filterMoviesByGenre()"
+  >
+    <option value="all">All Genres</option>
+    <!-- Opcje gatunków zostaną dodane dynamicznie w library.js -->
+  </select>
 </div>
 
 <div class="my-movie-container" id="user-movies"></div>
+<div class="library-load-more-btn-container">
+  <button
+    class="library-load-more-btn"
+    id="show-more"
+    onclick="showMoreMovies()"
+  >
+    See all
+  </button>
+</div>

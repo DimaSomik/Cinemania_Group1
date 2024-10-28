@@ -20,62 +20,74 @@ function closeMenuOnClickOutside(event) {
   }
 }
 
-const displayNone = (elem) => {document.querySelector(`${elem}`).style.display = "none"};
-const displayFlex = (elem) => {document.querySelector(`${elem}`).style.display = "flex"};
-const displayUnset = (elem) => {document.querySelector(`${elem}`).style.display = "unset"};
+const displayNone = elem => {
+  document.querySelector(`${elem}`).style.display = 'none';
+};
+const displayFlex = elem => {
+  document.querySelector(`${elem}`).style.display = 'flex';
+};
+const displayUnset = elem => {
+  document.querySelector(`${elem}`).style.display = 'unset';
+};
 
 const homePage = document.querySelector('.header-link-index');
-homePage.addEventListener("click", (event) => {
+homePage.addEventListener('click', event => {
   event.preventDefault();
-  homePage.style.color = "#f87719";
-  catalogPage.style.color = "#595959";
-  libraryPage.style.color = "#595959";
+  homePage.style.color = '#f87719';
+  catalogPage.style.color = '#595959';
+  libraryPage.style.color = '#595959';
 
-  displayNone(".HeroBox");
-  displayFlex(".StartedHeroBox");
-  displayNone(".LibraryHeroBox");
-  displayNone(".catalog-container");
-  displayFlex("#movies-list");
-  document.querySelector('.movie-container').style.display = "grid";
-  displayUnset(".upcoming");
-  displayNone("#user-library");
-  displayNone(".my-movie-container");
+  displayNone('.HeroBox');
+  displayFlex('.StartedHeroBox');
+  displayNone('.LibraryHeroBox');
+  displayNone('.catalog-container');
+  displayFlex('#movies-list');
+  document.querySelector('.movie-container').style.display = 'grid';
+  displayUnset('.upcoming');
+  displayNone('#user-library');
+  displayNone('.my-movie-container');
+  displayNone('.library-container');
+  displayNone('.library-load-more-btn-container');
 });
 
 const catalogPage = document.querySelector('.header-link-catalog');
-catalogPage.addEventListener("click", (event) => {
-  homePage.style.color = "#595959";
-  catalogPage.style.color = "#f87719";
-  libraryPage.style.color = "#595959";
+catalogPage.addEventListener('click', event => {
+  homePage.style.color = '#595959';
+  catalogPage.style.color = '#f87719';
+  libraryPage.style.color = '#595959';
 
   event.preventDefault();
-  displayFlex(".HeroBox");
-  displayUnset(".catalog-container");
-  displayNone(".StartedHeroBox");
-  displayNone(".LibraryHeroBox");
-  displayNone("#movies-list");
-  displayNone(".movie-container");
-  displayNone(".upcoming");
-  displayNone("#user-library");
-  displayNone(".my-movie-container");
+  displayFlex('.HeroBox');
+  displayUnset('.catalog-container');
+  displayNone('.StartedHeroBox');
+  displayNone('.LibraryHeroBox');
+  displayNone('#movies-list');
+  displayNone('.movie-container');
+  displayNone('.upcoming');
+  displayNone('#user-library');
+  displayNone('.my-movie-container');
+  displayNone('.library-container');
+  displayNone('.library-load-more-btn-container');
 });
 
 const libraryPage = document.querySelector('.header-link-library');
-libraryPage.addEventListener("click", (event) => {
-  homePage.style.color = "#595959";
-  catalogPage.style.color = "#595959";
-  libraryPage.style.color = "#f87719";
+libraryPage.addEventListener('click', event => {
+  homePage.style.color = '#595959';
+  catalogPage.style.color = '#595959';
+  libraryPage.style.color = '#f87719';
 
   event.preventDefault();
-  displayFlex(".LibraryHeroBox");
-  displayFlex("#user-library");
-  displayFlex(".my-movie-container");
-  displayNone(".HeroBox");
-  displayNone(".StartedHeroBox");
-  displayNone(".catalog-container");
-  displayNone("#movies-list");
-  displayNone(".movie-container");
-  displayNone(".upcoming");
+  displayFlex('.LibraryHeroBox');
+  displayFlex('#user-library');
+  displayFlex('.my-movie-container');
+  displayFlex('.library-container');
+  displayFlex('.library-load-more-btn-container');
+  displayNone('.HeroBox');
+  displayNone('.StartedHeroBox');
+  displayNone('.catalog-container');
+  displayNone('#movies-list');
+  displayNone('.movie-container');
+  displayNone('.upcoming');
 });
 
 headerMenuBtn.addEventListener('click', toggleMenu);

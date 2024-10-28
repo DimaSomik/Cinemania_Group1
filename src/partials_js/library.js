@@ -5,9 +5,23 @@ let userMoviesList = [];
 let availableGenres = [];
 const userMoviesContainer = document.getElementById('user-movies');
 const showMoreButton = document.getElementById('show-more');
+const genreFilter = document.getElementById('genre-filter');
+
+const DEFAULT_MOVIES_TO_DISPLAY = 9;
+const MOVIES_INCREMENT = 3;
 
 async function fetchAvailableGenres() {
   availableGenres = await getGenres();
+  populateGenreDropdown();
+}
+
+function populateGenreDropdown() {
+  availableGenres.forEach(genre => {
+    const option = document.createElement('option');
+    option.value = genre.id;
+    option.textContent = genre.name;
+    genreFilter.appendChild(option);
+  });
 }
 
 function fetchMoviesFromStorage() {
@@ -38,52 +52,61 @@ function generateStars(vote) {
   );
 }
 
-function renderUserMovies(limit = getUserMoviesPerLoad()) {
-  const moviesToLoad = limit;
+function renderUserMovies(limit = DEFAULT_MOVIES_TO_DISPLAY, genreId = 'all') {
+  userMoviesContainer.innerHTML = '';
 
-  for (let i = 0; i < moviesToLoad; i++) {
-    if (currentIndex < userMoviesList.length) {
-      const movie = userMoviesList[currentIndex];
-
-      if (movie && movie.genre_ids) {
-        const genreNames = fetchGenreNames(movie.genre_ids);
-
-        const movieCard = document.createElement('div');
-        movieCard.classList.add('my-movie-card');
-        movieCard.innerHTML = `
-          <img src="https://image.tmdb.org/t/p/w500${movie.poster_path}" alt="${
-          movie.title
-        }">
-          <div class="my-movie-info">
-            <h2 class="my-movie-title">${movie.title}</h2> 
-            <p>${genreNames} | ${movie.release_date.split('-')[0]}</p>
-            <div class="my-stars">${generateStars(movie.vote_average)}</div>
-          </div>
-        `;
-        userMoviesContainer.appendChild(movieCard);
-        currentIndex++;
-      } else {
-        console.error(
-          `Movie is not defined or genre_ids are missing for index ${currentIndex}`
+  const filteredMovies =
+    genreId === 'all'
+      ? userMoviesList
+      : userMoviesList.filter(movie =>
+          movie.genre_ids.includes(Number(genreId))
         );
-      }
-    } else {
-      showMoreButton.style.display = 'none';
-      break;
+
+  for (let i = 0; i < Math.min(limit, filteredMovies.length); i++) {
+    const movie = filteredMovies[currentIndex + i];
+
+    if (movie && movie.genre_ids) {
+      const genreNames = fetchGenreNames(movie.genre_ids);
+      const movieCard = document.createElement('div');
+      movieCard.classList.add('my-movie-card');
+      movieCard.innerHTML = `
+        <img src="https://image.tmdb.org/t/p/w500${movie.poster_path}" alt="${
+        movie.title
+      }">
+        <div class="my-movie-info">
+          <h2 class="my-movie-title">${movie.title}</h2>
+          <p>${genreNames} | ${movie.release_date.split('-')[0]}</p>
+          <div class="my-stars">${generateStars(movie.vote_average)}</div>
+        </div>
+      `;
+      userMoviesContainer.appendChild(movieCard);
     }
   }
+
+  currentIndex += limit;
+
+  // Zaktualizuj widoczność przycisku "Load more"
+  showMoreButton.style.display =
+    currentIndex < filteredMovies.length ? 'block' : 'none';
+}
+
+function filterMoviesByGenre() {
+  const selectedGenreId = genreFilter.value;
+  currentIndex = 0; // Resetuj indeks
+  renderUserMovies(DEFAULT_MOVIES_TO_DISPLAY, selectedGenreId);
 }
 
 function showMoreMovies() {
-  renderUserMovies(getUserMoviesPerLoad());
+  const selectedGenreId = genreFilter.value;
+  renderUserMovies(MOVIES_INCREMENT, selectedGenreId);
 }
 
 async function initializeMovies() {
   await fetchAvailableGenres();
   fetchMoviesFromStorage();
-  renderUserMovies(12);
+  renderUserMovies(DEFAULT_MOVIES_TO_DISPLAY);
 }
 
 document.addEventListener('DOMContentLoaded', initializeMovies);
-
+genreFilter.addEventListener('change', filterMoviesByGenre);
 showMoreButton.addEventListener('click', showMoreMovies);

@@ -139,7 +139,7 @@ body.light-theme .my-movie-info {
   justify-content: space-between;
   gap: 16px;
   display: block;
-  overflow-x: scroll;
+  overflow: hidden;
 }
 
 @media (min-width: 768px) {
@@ -249,4 +249,54 @@ body.light-theme .my-movie-info {
     width: 1215px;
     height: 574px;
   }
+  .library-genres-select {
+    border-radius: 8px;
+    border: 1px solid #fff;
+    height: 40px;
+    width: 150px;
+    background-color: #111;
+    color: #b7b7b7;
+    padding-left: 16px;
+    font-family: Roboto;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: normal;
+    cursor: pointer;
+    float: left;
+    margin-right: 10px;
+  }
+}
+
+.library-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center; /* Wyrównanie w pionie */
+  margin-bottom: 12px;
+}
+
+.library-load-more-btn-container {
+  display: flex; /* Użyj flexbox do centrowania */
+  justify-content: center; /* Wyśrodkowanie w poziomie */
+  margin-top: 20px; /* Odstęp od elementów powyżej */
+  margin-bottom: 20px; /* Odstęp od elementów poniżej */
+}
+
+.library-load-more-btn {
+  font-family: Roboto;
+  width: 117px;
+  height: 38px;
+  border-radius: 74px;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 14.06px;
+  text-align: center;
+  border: none;
+  color: #000000;
+  background-image: linear-gradient(160deg, #ffc226 2%, #f84119 70%);
+  transition: 0.5s;
+  background-size: 200% auto;
+}
+
+.library-load-more-btn:hover {
+  background-position: right center;
 }
