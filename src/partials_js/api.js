@@ -48,7 +48,12 @@ export async function getUpcomingMovies(page = 1) {
 }
 
 // Function to search for movies by keywords, year, and country
-export async function searchMovies(query = '', year = '', country = '', page = 1) {
+export async function searchMovies(
+  query = '',
+  year = '',
+  country = '',
+  page = 1
+) {
   let url = `${baseUrl}/search/movie?api_key=${apiKey}&page=${page}`;
 
   const params = {
@@ -61,7 +66,7 @@ export async function searchMovies(query = '', year = '', country = '', page = 1
   }
 
   if (year) {
-    params.year = year;
+    params.primary_release_year = year;
   }
 
   if (country) {

@@ -16,7 +16,7 @@
 .ModalContent {
     background-color: white;
     width: 700px;
-    height: 400px;
+    height: 440px;
     border-radius: 20px;
     margin: 15% auto;
     padding: 20px;
@@ -35,6 +35,8 @@
   right: 20px;
   font-size: 24px;
   cursor: pointer;
+  border: none;
+  background: inherit;
 }
 
 /* Modal body content */

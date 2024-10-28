@@ -3,7 +3,7 @@ const MODAL = document.getElementById("Modal");
 const CLOSE_BTN = document.querySelector(".CloseBtn");
 
 // Function to open the modal
-function openModal() {
+export function openModal() {
   MODAL.style.display = "block";
 }
 
