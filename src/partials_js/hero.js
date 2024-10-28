@@ -1,4 +1,5 @@
 import { getPopularMoviesToday } from './api';
+import { getMovieVideos } from './api';
 import { getRandomMovie } from './upcoming';
 import { showModal } from './modal_1';
 import { openModal } from './modal_2';
@@ -46,11 +47,14 @@ async function showHero() {
     const fetchPopularMovie = await getPopularMoviesToday(1);
     const randomMovie = getRandomMovie(fetchPopularMovie.results);
 
+    const video = await getMovieVideos(randomMovie.id);
+    const ytKey = video[0].key;
+
     document.querySelector('.HeroMoreDetails').addEventListener('click', () => {
         showModal(randomMovie);
     });  
     document.querySelector('.HeroWatchTrailer').addEventListener('click', () => {
-        openModal(randomMovie);
+        openModal(ytKey);
     });
 
     loadHeroContent(randomMovie);
