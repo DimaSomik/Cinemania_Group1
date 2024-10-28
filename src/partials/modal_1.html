@@ -1,13 +1,28 @@
 <div id="modal" class="modal hidden">
     <div class="modal-content">
-        <button id="closeModalBtn" class="close-modal">&times;</button>
-        <img id="moviePoster" src="./images/camera.png" alt="Movie Poster" class="modal-poster" />
-        <h2 id="movieTitle">Title</h2>
-        <p id="movieRating">Rating: </p>
-        <p id="moviePopularity">Popularity: </p>
-        <p id="movieDescription" class="modal-description">Description</p>
-        <button id="toggleLibraryBtn" class="modal-library-btn">Add to My Library</button>
-        <button id="watchTrailerBtn" class="modal-trailer-btn">Watch Trailer</button>
-        <div id="trailerContainer" class="trailer-container hidden"></div>
+            <button id="closeModalBtn" class="close-modal">&times;</button>
+            <img id="moviePoster" src="./images/camera.png" alt="Movie Poster" class="modal-poster" />
+            <div class="modal-box">
+                <h2 class="FirstModalTitle"></h2>
+
+                <div class="ModalFirstDiv">
+                <p class="ModalVote">Vote / Votes</p>
+                <p id="movieRating">Rating </p>
+                </div>
+
+                <div class="ModalSecondDiv">
+                <p class="ModalPopularity">Popularity</p>
+                <p class="FirstModalPopularity">ExampleText</p>
+                </div>
+
+                <div class="ModalThirdDiv">
+                <p class="ModalGenre">Genre</p>
+                <p class="FirstModalGenres">Genre</p>
+                </div>
+
+                <h3 class="FirstModalAbout">ABOUT</h3>
+                <p id="movieDescription" class="modal-description">Description</p>
+                <button id="toggleLibraryBtn" class="modal-library-btn">Add to My Library</button>
+            </div>
     </div>
 </div>

@@ -8,7 +8,47 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 10;
+  z-index: 51;
+}
+
+.modal-box {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 30px;
+}
+
+.ModalFirstDiv {
+  display: flex;
+  gap: 40px;
+  margin-top: 15px;
+}
+
+.ModalSecondDiv {
+  display: flex;
+  gap: 56px;
+}
+
+.ModalThirdDiv {
+  display: flex;
+  gap: 87px;
+  margin-bottom: 15px;
+}
+
+.ModalVote {
+  color: #b7b7b7;
+}
+
+.ModalPopularity {
+  color: #b7b7b7;
+}
+
+.ModalGenre {
+  color: #b7b7b7;
+}
+
+.FirstModalAbout {
+  color: #b7b7b7;
 }
 
 .modal-content {
@@ -19,28 +59,28 @@
   padding: 20px;
   display: flex;
   color: #fff;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
   position: relative;
+  box-shadow: 1px 1px 14px 4px rgba(255, 107, 8, 0.42);
 }
 
 .close-modal {
   position: absolute;
-  top: 15px;
-  right: 15px;
+  top: 20px;
+  right: 30px;
   background: none;
   border: none;
   color: #fff;
-  font-size: 24px;
+  font-size: 35px;
   cursor: pointer;
 }
 
 .modal-poster {
-  width: 363px;
-  height: 318px;
+  width: 800px;
+  height: 500px;
   border-radius: 10px;
-  border: 3px solid #007aff;
   /* Bright blue border */
   margin-right: 20px;
+  margin-top: 30px;
 }
 
 .modal-info {
@@ -66,18 +106,22 @@
   overflow-y: auto;
   font-size: 16px;
   line-height: 1.5;
-  color: #bbb;
+  color: #FFF;
   margin-bottom: 20px;
 }
 
 .modal-library-btn {
-  padding: 10px 20px;
-  background-color: #333;
-  border: 1px solid #f7931e;
-  color: #f7931e;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 16px;
+  font-family: 'Roboto';
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 16px;
+  text-align: center;
+  width: 140px;
+  height: 40px;
+  border-radius: 74px;
+  border: 1px solid #FFC226;
+  background-color: transparent;
+  color: #FFF;
 }
 
 
