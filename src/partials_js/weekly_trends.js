@@ -129,7 +129,7 @@ const modal = document.getElementById('modal');
 const closeModalBtn = document.getElementById('closeModalBtn');
 const toggleLibraryBtn = document.getElementById('toggleLibraryBtn');
 // const watchTrailerBtn = document.getElementById('watchTrailerBtn');
-const trailerContainer = document.getElementById('trailerContainer');
+// const trailerContainer = document.getElementById('trailerContainer');
 
 // Dodaj event listener do każdej karty
 document.querySelectorAll('movie-card').forEach(card => {
