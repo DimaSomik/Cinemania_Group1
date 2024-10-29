@@ -45,14 +45,16 @@ function handleEscKeyPress(event) {
 
 // Funkcja do aktualizacji tekstu przycisku (dodaj/usuń z `My library`)
 function updateLibraryButton() {
-  const library = JSON.parse(localStorage.getItem('myLibrary')) || [];
+  const library = JSON.parse(localStorage.getItem('moviesLibrary')) || [];
   const isInLibrary = library.some(item => item.id === currentMovie.id);
-  toggleLibraryBtn.textContent = isInLibrary ? 'Remove from My Library' : 'Add to My Library';
+  toggleLibraryBtn.textContent = isInLibrary
+    ? 'Remove from My Library'
+    : 'Add to My Library';
 }
 
 // Funkcja do dodawania/usuwa filmu z `My library`
 function toggleLibrary() {
-  let library = JSON.parse(localStorage.getItem('myLibrary')) || [];
+  let library = JSON.parse(localStorage.getItem('moviesLibrary')) || [];
   const isInLibrary = library.some(item => item.id === currentMovie.id);
 
   if (isInLibrary) {
@@ -61,16 +63,20 @@ function toggleLibrary() {
     library.push(currentMovie);
   }
 
-  localStorage.setItem('myLibrary', JSON.stringify(library));
+  localStorage.setItem('moviesLibrary', JSON.stringify(library));
   updateLibraryButton();
 }
 
 // Funkcja do wyświetlania trailera
 async function showTrailer() {
   try {
-    const response = await fetch(`https://api.themoviedb.org/3/movie/${currentMovie.id}/videos?api_key=YOUR_KEY`);
+    const response = await fetch(
+      `https://api.themoviedb.org/3/movie/${currentMovie.id}/videos?api_key=YOUR_KEY`
+    );
     const data = await response.json();
-    const trailer = data.results.find(video => video.type === 'Trailer' && video.site === 'YouTube');
+    const trailer = data.results.find(
+      video => video.type === 'Trailer' && video.site === 'YouTube'
+    );
 
     if (trailer) {
       trailerContainer.innerHTML = `<iframe width="560" height="315" src="https://www.youtube.com/embed/${trailer.key}" frameborder="0" allowfullscreen></iframe>`;
@@ -90,6 +96,5 @@ modal.addEventListener('click', event => {
   if (event.target === modal) closeModal();
 });
 toggleLibraryBtn.addEventListener('click', toggleLibrary);
-
 // Przykład wywołania showModal z obiektem filmu
 // showModal({ id: 123, poster_path: '/example.jpg', title: 'Example Movie', vote_average: 8.5, popularity: 123.4, overview: 'This is an example description.' });
