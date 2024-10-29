@@ -40,11 +40,12 @@ homePage.addEventListener('click', event => {
   displayNone('.HeroBox');
   displayFlex('.StartedHeroBox');
   displayNone('.LibraryHeroBox');
+  displayNone('.Library-General-Container');
   displayNone('.catalog-container');
   displayFlex('#movies-list');
   document.querySelector('.movie-container').style.display = 'grid';
   displayUnset('.upcoming');
-  displayNone('#user-library');
+  // displayNone('#user-library');
   displayNone('.my-movie-container');
   displayNone('.library-container');
   displayNone('.library-load-more-btn-container');
@@ -61,10 +62,11 @@ catalogPage.addEventListener('click', event => {
   displayUnset('.catalog-container');
   displayNone('.StartedHeroBox');
   displayNone('.LibraryHeroBox');
+  displayNone('.Library-General-Container');
   displayNone('#movies-list');
   displayNone('.movie-container');
   displayNone('.upcoming');
-  displayNone('#user-library');
+  // displayNone('#user-library');
   displayNone('.my-movie-container');
   displayNone('.library-container');
   displayNone('.library-load-more-btn-container');
@@ -78,7 +80,6 @@ libraryPage.addEventListener('click', event => {
 
   event.preventDefault();
   displayFlex('.LibraryHeroBox');
-  displayFlex('#user-library');
   displayFlex('.my-movie-container');
   displayFlex('.library-container');
   displayFlex('.library-load-more-btn-container');
@@ -88,6 +89,7 @@ libraryPage.addEventListener('click', event => {
   displayNone('#movies-list');
   displayNone('.movie-container');
   displayNone('.upcoming');
+  displayUnset('.Library-General-Container');
 });
 
 headerMenuBtn.addEventListener('click', toggleMenu);
