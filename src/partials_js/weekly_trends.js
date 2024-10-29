@@ -1,5 +1,6 @@
 import { getGenres } from './api';
 import { getPopularMoviesWeek } from './api';
+import { openCatalogPage } from './header';
 
 let page = 1;
 let currentMovieIndex = 0; // Index aktualnie wyświetlanego filmu
@@ -87,8 +88,10 @@ function displayMovies() {
 
 // Obsługa przycisku "Załaduj więcej"
 loadMoreButton.addEventListener('click', () => {
-  page++;
-  getMovies(page);
+  // page++;
+  // getMovies(page);
+
+  openCatalogPage();
 });
 
 // Najpierw pobierz listę gatunków, a potem filmy
