@@ -128,8 +128,8 @@ function loadMoreMovies() {
 const modal = document.getElementById('modal');
 const closeModalBtn = document.getElementById('closeModalBtn');
 const toggleLibraryBtn = document.getElementById('toggleLibraryBtn');
-const watchTrailerBtn = document.getElementById('watchTrailerBtn');
-const trailerContainer = document.getElementById('trailerContainer');
+// const watchTrailerBtn = document.getElementById('watchTrailerBtn');
+// const trailerContainer = document.getElementById('trailerContainer');
 
 // Dodaj event listener do każdej karty
 document.querySelectorAll('movie-card').forEach(card => {
@@ -172,12 +172,12 @@ toggleLibraryBtn.addEventListener('click', function () {
 });
 
 // Obsługa wyświetlania trailera
-watchTrailerBtn.addEventListener('click', function () {
-  trailerContainer.classList.toggle('hidden');
-  if (!trailerContainer.classList.contains('hidden')) {
-    trailerContainer.innerHTML =
-      '<iframe width="100%" height="315" src="https://www.youtube.com/embed/example-trailer" frameborder="0" allowfullscreen></iframe>';
-  } else {
-    trailerContainer.innerHTML = ''; // Usuwa zawartość trailera po zamknięciu
-  }
-});
+// watchTrailerBtn.addEventListener('click', function () {
+//   trailerContainer.classList.toggle('hidden');
+//   if (!trailerContainer.classList.contains('hidden')) {
+//     trailerContainer.innerHTML =
+//       '<iframe width="100%" height="315" src="https://www.youtube.com/embed/example-trailer" frameborder="0" allowfullscreen></iframe>';
+//   } else {
+//     trailerContainer.innerHTML = ''; // Usuwa zawartość trailera po zamknięciu
+//   }
+// });
