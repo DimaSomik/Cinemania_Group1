@@ -160,8 +160,8 @@ document.querySelectorAll('movie-card').forEach(card => {
 // Obsługa zamknięcia modalu
 closeModalBtn.addEventListener('click', function () {
   modal.classList.add('hidden');
-  trailerContainer.classList.add('hidden');
-  trailerContainer.innerHTML = ''; // Usuwa zawartość trailera po zamknięciu
+  // trailerContainer.classList.add('hidden');
+  // trailerContainer.innerHTML = ''; // Usuwa zawartość trailera po zamknięciu
 });
 
 // Obsługa dodania filmu do biblioteki

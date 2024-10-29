@@ -33,8 +33,8 @@ export async function showModal(movie) {
 // Funkcja do zamykania modala
 function closeModal() {
   modal.classList.add('hidden');
-  trailerContainer.classList.add('hidden');
-  trailerContainer.innerHTML = ''; // Usuń trailer z kontenera
+  // trailerContainer.classList.add('hidden');
+  // trailerContainer.innerHTML = ''; // Usuń trailer z kontenera
   document.removeEventListener('keydown', handleEscKeyPress);
 }
 
