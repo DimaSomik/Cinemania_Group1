@@ -2,6 +2,7 @@ import { getPopularMoviesWeek } from './api';
 import { getGenreNames } from './weekly_trends';
 import { getGenres } from './api';
 import { searchMovies } from './api';
+import { showModal } from './modal_1';
 
 let genres = [];
 
@@ -58,6 +59,16 @@ function createMovieCard(movie) {
 function createMoviesCatalog(movies) {
   const gallery = document.querySelector('.CatalogGallery');
   gallery.innerHTML = movies.map(createMovieCard).join('');
+
+  addCardModals(movies);
+}
+
+function addCardModals(movies) {
+  document.querySelectorAll('.CatalogMovieCard').forEach((card, index) => {
+    card.addEventListener('click', () => {
+      showModal(movies[index]);
+    });
+  });
 }
 
 async function initializeCatalog(page = 1) {
