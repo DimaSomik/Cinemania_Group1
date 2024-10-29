@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
+.Library-General-Container {
+  display: none;
+}
+
 .body-style {
   background-color: rgba(17, 17, 17, 1);
 }
@@ -253,7 +257,7 @@ body.light-theme .my-movie-info {
     border-radius: 8px;
     border: 1px solid #fff;
     height: 40px;
-    width: 150px;
+    width: 200px;
     background-color: #111;
     color: #b7b7b7;
     padding-left: 16px;
@@ -264,6 +268,7 @@ body.light-theme .my-movie-info {
     cursor: pointer;
     float: left;
     margin-right: 10px;
+    margin-left: 110px;
   }
 }
 
