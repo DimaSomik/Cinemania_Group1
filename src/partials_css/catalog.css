@@ -98,6 +98,7 @@
   position: relative;
   width: 280px;
   height: 406px;
+  cursor: pointer;
 }
 .CatalogMovieImg {
   width: 280px;
