@@ -1,6 +1,6 @@
 import { getGenres } from './api';
 import { getPopularMoviesWeek } from './api';
-import { showModal } from './modal_1';
+// import { showModal } from './modal_1';
 
 let page = 1;
 let currentMovieIndex = 0; // Index aktualnie wyświetlanego filmu
@@ -167,6 +167,16 @@ document.querySelectorAll('movie-card').forEach(card => {
   });
 });
 
+// watchTrailerBtn.addEventListener('click', function () {
+//   trailerContainer.classList.toggle('hidden');
+//   if (!trailerContainer.classList.contains('hidden')) {
+//     trailerContainer.innerHTML =
+//       '<iframe width="100%" height="315" src="https://www.youtube.com/embed/example-trailer" frameborder="0" allowfullscreen></iframe>';
+//   } else {
+//     trailerContainer.innerHTML = ''; // Usuwa zawartość trailera po zamknięciu
+//   }
+// });
+
 // Obsługa zamknięcia modalu
 closeModalBtn.addEventListener('click', function () {
   modal.classList.add('hidden');
@@ -186,9 +196,7 @@ export async function showModal(movie) {
   currentMovie = movie;
   moviePoster.src = `https://image.tmdb.org/t/p/original/${movie.poster_path}`;
   movieTitle.innerText = movie.title;
-  movieRating.innerText = `${movie.vote_average.toFixed(
-    1
-  )} / ${movie.vote_count.toFixed(1)}`;
+  movieRating.innerText = `${movie.vote_average.toFixed(1)} / ${movie.vote_count.toFixed(1)}`;
   moviePopularity.innerText = `${movie.popularity.toFixed(1)}`;
   const genreNames = getGenreNames(movie.genre_ids);
   movieGenres.innerText = `${genreNames}`;
@@ -212,13 +220,3 @@ function closeModal() {
 function handleEscKeyPress(event) {
   if (event.key === 'Escape') closeModal();
 }
-
-// watchTrailerBtn.addEventListener('click', function () {
-//   trailerContainer.classList.toggle('hidden');
-//   if (!trailerContainer.classList.contains('hidden')) {
-//     trailerContainer.innerHTML =
-//       '<iframe width="100%" height="315" src="https://www.youtube.com/embed/example-trailer" frameborder="0" allowfullscreen></iframe>';
-//   } else {
-//     trailerContainer.innerHTML = ''; // Usuwa zawartość trailera po zamknięciu
-//   }
-// });
