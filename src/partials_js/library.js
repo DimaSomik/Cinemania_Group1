@@ -54,8 +54,6 @@ function generateStars(vote) {
 }
 
 function renderUserMovies(limit = DEFAULT_MOVIES_TO_DISPLAY, genreId = 'all') {
-  userMoviesContainer.innerHTML = '';
-
   const filteredMovies =
     genreId === 'all'
       ? userMoviesList
@@ -63,8 +61,12 @@ function renderUserMovies(limit = DEFAULT_MOVIES_TO_DISPLAY, genreId = 'all') {
           movie.genre_ids.includes(Number(genreId))
         );
 
-  for (let i = 0; i < Math.min(limit, filteredMovies.length); i++) {
-    const movie = filteredMovies[currentIndex + i];
+  for (
+    let i = currentIndex;
+    i < Math.min(currentIndex + limit, filteredMovies.length);
+    i++
+  ) {
+    const movie = filteredMovies[i];
 
     if (movie && movie.genre_ids) {
       const genreNames = fetchGenreNames(movie.genre_ids);
@@ -87,20 +89,22 @@ function renderUserMovies(limit = DEFAULT_MOVIES_TO_DISPLAY, genreId = 'all') {
 
   currentIndex += limit;
 
-  // Zaktualizuj widoczność przycisku "Load more"
   showMoreButton.style.display =
     currentIndex < filteredMovies.length ? 'block' : 'none';
 }
 
 function filterMoviesByGenre() {
   const selectedGenreId = genreFilter.value;
-  currentIndex = 0; // Resetuj indeks
+  currentIndex = 0;
   renderUserMovies(DEFAULT_MOVIES_TO_DISPLAY, selectedGenreId);
 }
 
 function showMoreMovies() {
   const selectedGenreId = genreFilter.value;
-  renderUserMovies(MOVIES_INCREMENT, selectedGenreId);
+
+  currentIndex += MOVIES_INCREMENT;
+
+  renderUserMovies(currentIndex, selectedGenreId);
 }
 
 async function initializeMovies() {
