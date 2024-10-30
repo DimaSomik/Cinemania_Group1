@@ -182,3 +182,35 @@ watchTrailerBtn.addEventListener('click', function () {
     trailerContainer.innerHTML = ''; // Usuwa zawartość trailera po zamknięciu
   }
 });
+
+// Funkcja do wyświetlania modala
+export async function showModal(movie) {
+  currentMovie = movie;
+  moviePoster.src = `https://image.tmdb.org/t/p/original/${movie.poster_path}`;
+  movieTitle.innerText = movie.title;
+  movieRating.innerText = `${movie.vote_average.toFixed(
+    1
+  )} / ${movie.vote_count.toFixed(1)}`;
+  moviePopularity.innerText = `${movie.popularity.toFixed(1)}`;
+  const genreNames = getGenreNames(movie.genre_ids);
+  movieGenres.innerText = `${genreNames}`;
+  movieDescription.innerText = movie.overview;
+
+  updateLibraryButton();
+  modal.classList.remove('hidden');
+
+  document.addEventListener('keydown', handleEscKeyPress);
+}
+
+// Funkcja do zamykania modala
+function closeModal() {
+  modal.classList.add('hidden');
+  // trailerContainer.classList.add('hidden');
+  // trailerContainer.innerHTML = ''; // Usuń trailer z kontenera
+  document.removeEventListener('keydown', handleEscKeyPress);
+}
+
+// Funkcja obsługująca naciśnięcie klawisza ESC
+function handleEscKeyPress(event) {
+  if (event.key === 'Escape') closeModal();
+}
