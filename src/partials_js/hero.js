@@ -1,5 +1,8 @@
 import { getPopularMoviesToday } from './api';
+import { getMovieVideos } from './api';
 import { getRandomMovie } from './upcoming';
+import { showModal } from './modal_1';
+import { openModal } from './modal_2';
 
 const BACKGROUND_URL = "https://image.tmdb.org/t/p/original";
 
@@ -40,8 +43,21 @@ function loadHeroContent(movie) {
                                                                 url(${BACKGROUND_URL}${movie.backdrop_path})`;
 };
 
-(async () => {
+async function showHero() {    
     const fetchPopularMovie = await getPopularMoviesToday(1);
     const randomMovie = getRandomMovie(fetchPopularMovie.results);
+
+    const video = await getMovieVideos(randomMovie.id);
+    const ytKey = video[0].key;
+
+    document.querySelector('.HeroMoreDetails').addEventListener('click', () => {
+        showModal(randomMovie);
+    });  
+    document.querySelector('.HeroWatchTrailer').addEventListener('click', () => {
+        openModal(ytKey);
+    });
+
     loadHeroContent(randomMovie);
-})();
+};
+
+showHero();

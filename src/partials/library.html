@@ -1,3 +1,23 @@
-<div class="someBox">
-    <img src="./images/sorry.png" alt="sorry">
+<div class="Library-General-Container">
+  <div class="library-container">
+    <select
+      id="genre-filter"
+      class="library-genres-select"
+      onchange="filterMoviesByGenre()"
+    >
+      <option value="all">Genre</option>
+      <!-- Opcje gatunków zostaną dodane dynamicznie w library.js -->
+    </select>
+  </div>
+
+  <div class="my-movie-container" id="user-movies"></div>
+  <div class="library-load-more-btn-container">
+    <button
+      class="library-load-more-btn"
+      id="show-more"
+      onclick="showMoreMovies()"
+    >
+      See all
+    </button>
+  </div>
 </div>

@@ -88,8 +88,10 @@ function displayMovies() {
 
 // Obsługa przycisku "Załaduj więcej"
 loadMoreButton.addEventListener('click', () => {
-  page++;
-  getMovies(page);
+  // page++;
+  // getMovies(page);
+
+  openCatalogPage();
 });
 
 // Najpierw pobierz listę gatunków, a potem filmy
@@ -135,7 +137,9 @@ const moviePopularity = document.querySelector('.FirstModalPopularity');
 const movieGenres = document.querySelector('.FirstModalGenres');
 const movieDescription = document.getElementById('movieDescription');
 const toggleLibraryBtn = document.getElementById('toggleLibraryBtn');
-const trailerContainer = document.getElementById('trailerContainer');
+
+// const trailerContainer = document.getElementById('trailerContainer');
+// const watchTrailerBtn = document.getElementById('watchTrailerBtn');
 
 // Dodaj event listener do każdej karty
 document.querySelectorAll('movie-card').forEach(card => {
@@ -166,8 +170,8 @@ document.querySelectorAll('movie-card').forEach(card => {
 // Obsługa zamknięcia modalu
 closeModalBtn.addEventListener('click', function () {
   modal.classList.add('hidden');
-  trailerContainer.classList.add('hidden');
-  trailerContainer.innerHTML = ''; // Usuwa zawartość trailera po zamknięciu
+  // trailerContainer.classList.add('hidden');
+  // trailerContainer.innerHTML = ''; // Usuwa zawartość trailera po zamknięciu
 });
 
 // Obsługa dodania filmu do biblioteki
@@ -175,17 +179,6 @@ toggleLibraryBtn.addEventListener('click', function () {
   // Przykładowe działanie: wyświetlenie alertu
   alert('Film dodany do biblioteki!');
   // Możesz dodać tutaj dodatkową logikę, np. przechowywanie danych w localStorage
-});
-
-// Obsługa wyświetlania trailera
-watchTrailerBtn.addEventListener('click', function () {
-  trailerContainer.classList.toggle('hidden');
-  if (!trailerContainer.classList.contains('hidden')) {
-    trailerContainer.innerHTML =
-      '<iframe width="100%" height="315" src="https://www.youtube.com/embed/example-trailer" frameborder="0" allowfullscreen></iframe>';
-  } else {
-    trailerContainer.innerHTML = ''; // Usuwa zawartość trailera po zamknięciu
-  }
 });
 
 // Funkcja do wyświetlania modala
@@ -219,3 +212,13 @@ function closeModal() {
 function handleEscKeyPress(event) {
   if (event.key === 'Escape') closeModal();
 }
+
+// watchTrailerBtn.addEventListener('click', function () {
+//   trailerContainer.classList.toggle('hidden');
+//   if (!trailerContainer.classList.contains('hidden')) {
+//     trailerContainer.innerHTML =
+//       '<iframe width="100%" height="315" src="https://www.youtube.com/embed/example-trailer" frameborder="0" allowfullscreen></iframe>';
+//   } else {
+//     trailerContainer.innerHTML = ''; // Usuwa zawartość trailera po zamknięciu
+//   }
+// });
