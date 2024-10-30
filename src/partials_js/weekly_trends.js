@@ -1,5 +1,6 @@
 import { getGenres } from './api';
 import { getPopularMoviesWeek } from './api';
+import { showModal } from './modal_1';
 
 let page = 1;
 let currentMovieIndex = 0; // Index aktualnie wyświetlanego filmu
