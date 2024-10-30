@@ -1,6 +1,6 @@
 import { getGenres } from './api';
 import { getPopularMoviesWeek } from './api';
-import { openCatalogPage } from './header';
+import { showModal } from './modal_1';
 
 let page = 1;
 let currentMovieIndex = 0; // Index aktualnie wyświetlanego filmu
@@ -130,9 +130,16 @@ function loadMoreMovies() {
 // Pobranie elementów HTML
 const modal = document.getElementById('modal');
 const closeModalBtn = document.getElementById('closeModalBtn');
+const moviePoster = document.getElementById('moviePoster');
+const movieTitle = document.querySelector('.FirstModalTitle');
+const movieRating = document.getElementById('movieRating');
+const moviePopularity = document.querySelector('.FirstModalPopularity');
+const movieGenres = document.querySelector('.FirstModalGenres');
+const movieDescription = document.getElementById('movieDescription');
 const toggleLibraryBtn = document.getElementById('toggleLibraryBtn');
-// const watchTrailerBtn = document.getElementById('watchTrailerBtn');
+
 // const trailerContainer = document.getElementById('trailerContainer');
+// const watchTrailerBtn = document.getElementById('watchTrailerBtn');
 
 // Dodaj event listener do każdej karty
 document.querySelectorAll('movie-card').forEach(card => {
@@ -174,7 +181,38 @@ toggleLibraryBtn.addEventListener('click', function () {
   // Możesz dodać tutaj dodatkową logikę, np. przechowywanie danych w localStorage
 });
 
-// Obsługa wyświetlania trailera
+// Funkcja do wyświetlania modala
+export async function showModal(movie) {
+  currentMovie = movie;
+  moviePoster.src = `https://image.tmdb.org/t/p/original/${movie.poster_path}`;
+  movieTitle.innerText = movie.title;
+  movieRating.innerText = `${movie.vote_average.toFixed(
+    1
+  )} / ${movie.vote_count.toFixed(1)}`;
+  moviePopularity.innerText = `${movie.popularity.toFixed(1)}`;
+  const genreNames = getGenreNames(movie.genre_ids);
+  movieGenres.innerText = `${genreNames}`;
+  movieDescription.innerText = movie.overview;
+
+  updateLibraryButton();
+  modal.classList.remove('hidden');
+
+  document.addEventListener('keydown', handleEscKeyPress);
+}
+
+// Funkcja do zamykania modala
+function closeModal() {
+  modal.classList.add('hidden');
+  // trailerContainer.classList.add('hidden');
+  // trailerContainer.innerHTML = ''; // Usuń trailer z kontenera
+  document.removeEventListener('keydown', handleEscKeyPress);
+}
+
+// Funkcja obsługująca naciśnięcie klawisza ESC
+function handleEscKeyPress(event) {
+  if (event.key === 'Escape') closeModal();
+}
+
 // watchTrailerBtn.addEventListener('click', function () {
 //   trailerContainer.classList.toggle('hidden');
 //   if (!trailerContainer.classList.contains('hidden')) {
