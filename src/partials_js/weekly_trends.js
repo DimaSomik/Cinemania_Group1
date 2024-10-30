@@ -1,5 +1,6 @@
 import { getGenres } from './api';
 import { getPopularMoviesWeek } from './api';
+import { openCatalogPage } from './header';
 import { showModal } from './modal_1';
 
 let page = 1;
