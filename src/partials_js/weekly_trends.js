@@ -128,8 +128,13 @@ function loadMoreMovies() {
 // Pobranie elementów HTML
 const modal = document.getElementById('modal');
 const closeModalBtn = document.getElementById('closeModalBtn');
+const moviePoster = document.getElementById('moviePoster');
+const movieTitle = document.querySelector('.FirstModalTitle');
+const movieRating = document.getElementById('movieRating');
+const moviePopularity = document.querySelector('.FirstModalPopularity');
+const movieGenres = document.querySelector('.FirstModalGenres');
+const movieDescription = document.getElementById('movieDescription');
 const toggleLibraryBtn = document.getElementById('toggleLibraryBtn');
-const watchTrailerBtn = document.getElementById('watchTrailerBtn');
 const trailerContainer = document.getElementById('trailerContainer');
 
 // Dodaj event listener do każdej karty
