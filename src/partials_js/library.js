@@ -1,4 +1,5 @@
 import { getGenres } from './api';
+import { showModal } from './modal_1';
 
 let currentIndex = 0;
 let userMoviesList = [];
@@ -79,6 +80,7 @@ function renderUserMovies(limit = DEFAULT_MOVIES_TO_DISPLAY, genreId = 'all') {
           <div class="my-stars">${generateStars(movie.vote_average)}</div>
         </div>
       `;
+      movieCard.onclick = () => showModal(movie);
       userMoviesContainer.appendChild(movieCard);
     }
   }
