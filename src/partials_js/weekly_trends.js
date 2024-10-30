@@ -88,12 +88,12 @@ function displayMovies() {
 }
 
 // Obsługa przycisku "Załaduj więcej"
-// loadMoreButton.addEventListener('click', () => {
-//   // page++;
-//   // getMovies(page);
+loadMoreButton.addEventListener('click', () => {
+  // page++;
+  // getMovies(page);
 
-//   openCatalogPage();
-// });
+  openCatalogPage();
+});
 
 // Najpierw pobierz listę gatunków, a potem filmy
 getMovies(page);
