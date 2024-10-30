@@ -137,7 +137,7 @@ body.light-theme .my-movie-info {
 .my-movie-container {
   flex-wrap: wrap;
   width: 280px;
-  height: 406px;
+  height: auto;
   margin-right: 20px;
   margin-left: 20px;
   justify-content: space-between;
@@ -185,7 +185,7 @@ body.light-theme .my-movie-info {
     opacity: 0px;
     grid-template-columns: repeat(3, 1fr);
     width: 704px;
-    height: 325px;
+    height: auto;
     /* margin-right: 32px;
     margin-left: 32px; */
     margin: 0 auto;
@@ -251,7 +251,7 @@ body.light-theme .my-movie-info {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     width: 1215px;
-    height: 574px;
+    height: auto;
   }
   .library-genres-select {
     border-radius: 8px;
