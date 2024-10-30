@@ -78,7 +78,6 @@ function displayMovies() {
 
       moviesContainer.appendChild(movieCard);
       currentMovieIndex++; // Zwiększ indeks filmu
-      addCardModals(movie);
     } else {
       // Jeśli filmy się skończą, załaduj kolejną stronę
       page++;
